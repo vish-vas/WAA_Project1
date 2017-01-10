@@ -1,0 +1,34 @@
+<service name="StudentServiceREST" scope="application">
+	<description>
+		
+	</description>
+	<transports>
+		<transport>http</transport>
+	</transports>
+	<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+			class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</messageReceivers>
+	<parameter name="ServiceClass" locked="false">waa.swin.edu.au.StudentServiceREST</parameter>
+	<parameter name="disableSOAP11">true</parameter>
+	<parameter name="disableSOAP12">true</parameter>
+
+	<operation name="addStudent">
+		<parameter name="RESTMethod">POST</parameter>
+		<parameter name="RESTLocation">students</parameter>
+	</operation>
+
+	<operation name="updateStudent">
+		<parameter name="RESTMethod">PUT</parameter>
+		<parameter name="RESTLocation">student/{studentID}</parameter>
+	</operation>
+
+	<operation name="getStudentDetails">
+		<parameter name="RESTMethod">GET</parameter>
+		<parameter name="RESTLocation">student/{studentID}</parameter>
+	</operation>
+
+	
+</service>

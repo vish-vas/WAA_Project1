@@ -1,0 +1,10 @@
+<serviceGroup>
+	<service name="GoogleBookServiceJSON" scope="application">
+		<parameter name="ServiceClass" locked="false">au.edu.swin.waa.GoogleBookServiceJSON
+		</parameter>
+		<operation name="getBookFromGoogle">
+			<messageReceiver
+				class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver" />
+		</operation>
+	</service>
+</serviceGroup>

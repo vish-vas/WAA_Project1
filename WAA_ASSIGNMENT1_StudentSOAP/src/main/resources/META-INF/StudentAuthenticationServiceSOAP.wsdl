@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="StudentAuthenticationServiceSOAP" targetNamespace="http://au.edu.swin.waa" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://au.edu.swin.waa" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://au.edu.swin.waa">
+      <xsd:element name="StudentAuthentication">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="studentID" type="xsd:string"/>
+          	<xsd:element name="studentPin" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StudentAuthenticationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="message" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="StudentAuthenticationRequest">
+    <wsdl:part name="parameters" element="tns:StudentAuthentication">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="StudentAuthenticationResponse">
+    <wsdl:part name="parameters" element="tns:StudentAuthenticationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="StudentAuthenticationServiceSOAP">
+    <wsdl:operation name="StudentAuthentication">
+      <wsdl:input message="tns:StudentAuthenticationRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:StudentAuthenticationResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StudentAuthenticationServiceSOAPSOAP" type="tns:StudentAuthenticationServiceSOAP">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="StudentAuthentication">
+      <soap:operation soapAction="http://au.edu.swin.waa/StudentAuthentication"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StudentAuthenticationServiceSOAP">
+    <wsdl:port name="StudentAuthenticationServiceSOAPSOAP" binding="tns:StudentAuthenticationServiceSOAPSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

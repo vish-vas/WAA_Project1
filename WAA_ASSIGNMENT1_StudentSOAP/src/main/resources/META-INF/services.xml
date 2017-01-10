@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.1-wso2v14  Built on : Jul 25, 2015 (11:19:54 IST) -->
+<serviceGroup>
+   <service name="StudentAuthenticationServiceSOAP">
+      <messageReceivers>
+         <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out"
+                          class="waa.swin.edu.au.StudentAuthenticationServiceSOAPMessageReceiverInOut"/>
+      </messageReceivers>
+      <parameter name="ServiceClass">waa.swin.edu.au.StudentAuthenticationServiceSOAPSkeleton</parameter>
+      <parameter name="useOriginalwsdl">true</parameter>
+      <parameter name="modifyUserWSDLPortAddress">true</parameter>
+      <operation name="StudentAuthentication"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://au.edu.swin.waa">
+         <actionMapping>http://au.edu.swin.waa/StudentAuthentication</actionMapping>
+         <outputActionMapping>http://au.edu.swin.waa/StudentAuthenticationServiceSOAP/StudentAuthenticationResponse</outputActionMapping>
+      </operation>
+   </service>
+</serviceGroup>
